@@ -77,7 +77,7 @@
 		</div>
 		<?php endif; ?>
 		<div class="row">
-			<div class="col-md-12 col-lg-12 col-sm-12 card_render">
+			<div class="col-md-12 col-lg-12 col-sm-12 card_render" style="display: none">
 				<img src="img/carte.jpg" id="card_background" alt="carte"/>
 				<div class="card_text"><?php if(!empty($card_variables->message)) echo $card_variables->message ?></div>
 				<canvas id="snow"></canvas>
@@ -93,6 +93,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script src="js/card.js"></script>
+<?php if (!empty($card_variables)): ?>
+	<script type="text/javascript">
+		animate();
+	</script>
+<?php endif; ?>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="js/ie10-viewport-bug-workaround.js"></script>
 </body>

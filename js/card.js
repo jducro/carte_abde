@@ -4,8 +4,12 @@
  * Time: 20:15
  */
 
+var snow;
+
 function makeItSnow()
 {
+    clearInterval(snow);
+
     //canvas init
     var canvas = document.getElementById("snow");
     var ctx = canvas.getContext("2d");
@@ -89,11 +93,17 @@ function makeItSnow()
     }
 
     //animation loop
-    setInterval(draw, 33);
+    snow = setInterval(draw, 33);
+}
+
+function animate()
+{
+    $('.card_render').show();
+    makeItSnow();
 }
 
 $('.card_form').on('click', '.btn-test', function (e){
     e.preventDefault();
     $('.card_text').text($('#message').val());
-    makeItSnow();
+    animate();
 });
