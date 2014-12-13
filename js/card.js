@@ -100,6 +100,7 @@ function animate()
 {
     $('.card_render').show();
     makeItSnow();
+    $('.card_text').addClass('animated fadeInDown');
 }
 
 $('.card_form').on('click', '.btn-test', function (e){
