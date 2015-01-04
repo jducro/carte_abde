@@ -8,7 +8,7 @@
 // @TODO remplacer ces valeurs
 $sender = "test@test.fr";
 $subject = "##SENDER## vous a envoyé une carte";
-$message = 'Bonjour ##NAME##, <br /> ##NAME## vous a envoyé une carte <a href="##LINK##">Cliquez ici</a> pour la voir.';
+$message = 'Bonjour ##NAME##, <br /> ##SENDER## vous a envoyé une carte <a href="##LINK##">Cliquez ici</a> pour la voir.';
 
 
 
@@ -28,6 +28,7 @@ if (!empty($_POST['new_card'])) {
 	$sender  = $_POST['sender'] . ' <' . $sender . '>';
 	$reply_to = $_POST['sender'] . ' <' . $_POST['sender_email'] . '>';
 	$subject = str_replace('##SENDER##', $_POST['sender'], $subject);
+	$message = str_replace('##SENDER##', $_POST['sender'], $message);
 	$message = str_replace('##NAME##', $_POST['recipient'], $message);
 	$message = str_replace('##LINK##', $link, $message);
 

@@ -99,8 +99,8 @@ function makeItSnow()
 function animate()
 {
     $('.card_render').show();
-    $(".line1").fadeIn(1000, function(){
-        $(".line2").fadeIn(1000);
+    $(".line1").show("slide", {direction: "left"}, 1000, function(){
+        $(".line2").show("slide", {direction: "left"}, 1000);
     });
     //makeItSnow();
     //$('.card_text').addClass('animated fadeInDown');
