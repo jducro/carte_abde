@@ -66,6 +66,14 @@
 						<input type="email" class="form-control" id="email" name="email" placeholder="Entrer l'adresse email du destinataire">
 					</div>
 					<div class="form-group">
+						<label for="sender">Mon nom</label>
+						<input type="text" class="form-control" id="sender" name="sender" placeholder="Entrer votre nom">
+					</div>
+					<div class="form-group">
+						<label for="sender_email">Mon Email</label>
+						<input type="email" class="form-control" id="sender_email" name="sender_email" placeholder="Entrer votre adresse email">
+					</div>
+					<div class="form-group">
 						<label for="message">Message</label>
 						<textarea name="message" id="message" class="form-control"  cols="30" rows="5"></textarea>
 					</div>
@@ -74,7 +82,7 @@
 				</form>
 				<br />
 				<?php if (!empty($link)): ?>
-					<a href="<?php echo $link; ?>"><?php echo $link; ?></a>
+					Votre message a bien été envoyé
 				<?php endif; ?>
 			</div>
 		</div>

@@ -25,16 +25,16 @@ div.content {
 .card_render .over_text.line2 {
   top: 12%;
 }
-@media (max-width:655px) {
-  .card_render .over_text {
-    font-size: 4.5vw;
-  }
-}
 .card_render .card_text {
   bottom: 15%;
   width: 100%;
   text-align: left;
-  font-size: 2vw;
+  font-size: 30px;
+}
+@media (max-width:655px) {
+  .card_render .over_text, .card_render .card_text {
+    font-size: 4.5vw;
+  }
 }
 .card_render canvas#snow {
   display: block;

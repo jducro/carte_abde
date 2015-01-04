@@ -7,8 +7,8 @@
 
 // @TODO remplacer ces valeurs
 $sender = "test@test.fr";
-$subject = "Test sujet email";
-$message = "Bonjour ##NAME##, Exemple de message où le lien est ##LINK##";
+$subject = "##SENDER## vous a envoyé une carte";
+$message = 'Bonjour ##NAME##, <br /> ##NAME## vous a envoyé une carte <a href="##LINK##">Cliquez ici</a> pour la voir.';
 
 
 
@@ -24,11 +24,19 @@ if (!empty($_POST['new_card'])) {
 	$data['message'] = $_POST['message'];
 	$link = 'http://'.$_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME'].'?card='.base64_encode(json_encode($data));
 
-	$to      = $_GET['email'];
-	$message = str_replace('##NAME##', $link, $_GET['recipient']);
+	$to      = $_POST['recipient'] . ' <' .$_POST['email'] . '>';
+	$sender  = $_POST['sender'] . ' <' . $sender . '>';
+	$reply_to = $_POST['sender'] . ' <' . $_POST['sender_email'] . '>';
+	$subject = str_replace('##SENDER##', $_POST['sender'], $subject);
+	$message = str_replace('##NAME##', $_POST['recipient'], $message);
 	$message = str_replace('##LINK##', $link, $message);
-	$headers = 'From: ' . $sender . "\r\n" .
-		'Reply-To: ' .  $sender . "\r\n" .
+
+	// Pour envoyer un mail HTML, l'en-tête Content-type doit être défini
+	$headers  = 'MIME-Version: 1.0' . "\r\n";
+	$headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
+
+	$headers .= 'From: ' . $sender . "\r\n" .
+		'Reply-To: ' .  $reply_to . "\r\n" .
 		'X-Mailer: PHP/' . phpversion();
 
 	mail($to, $subject, $message, $headers);
