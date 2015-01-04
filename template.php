@@ -59,11 +59,11 @@
 					<input type="hidden" name="new_card" value="1"/>
 					<div class="form-group">
 						<label for="recipient">Destinataire</label>
-						<input type="text" class="form-control" id="recipient" name="recipient" placeholder="Entrer le destinataire">
+						<input type="text" class="form-control" id="recipient" name="recipient" placeholder="Entrer le nom du destinataire">
 					</div>
 					<div class="form-group">
 						<label for="recipient">Email</label>
-						<input type="email" class="form-control" id="email" name="email" placeholder="Entrer l'adresse email">
+						<input type="email" class="form-control" id="email" name="email" placeholder="Entrer l'adresse email du destinataire">
 					</div>
 					<div class="form-group">
 						<label for="message">Message</label>

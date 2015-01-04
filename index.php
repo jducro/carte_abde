@@ -8,7 +8,7 @@
 // @TODO remplacer ces valeurs
 $sender = "test@test.fr";
 $subject = "Test sujet email";
-$message = "Exemple de message où le lien est ##LINK##";
+$message = "Bonjour ##NAME##, Exemple de message où le lien est ##LINK##";
 
 
 
@@ -24,7 +24,8 @@ if (!empty($_POST['new_card'])) {
 	$data['message'] = $_POST['message'];
 	$link = 'http://'.$_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME'].'?card='.base64_encode(json_encode($data));
 
-	$to      = $_GET['recipient'];
+	$to      = $_GET['email'];
+	$message = str_replace('##NAME##', $link, $_GET['recipient']);
 	$message = str_replace('##LINK##', $link, $message);
 	$headers = 'From: ' . $sender . "\r\n" .
 		'Reply-To: ' .  $sender . "\r\n" .
