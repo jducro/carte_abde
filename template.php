@@ -10,6 +10,8 @@
 
 	<title>## CARTE DE VOEUX TITRE ##</title>
 
+	<link rel="stylesheet" href="./css/jquery-ui.structure.min.css"/>
+	<link rel="stylesheet" href="./css/jquery-ui.min.css"/>
 	<!-- Bootstrap core CSS -->
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
 
@@ -26,7 +28,7 @@
 
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="display: none;">
 	<div class="container">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -78,10 +80,13 @@
 		</div>
 		<?php endif; ?>
 		<div class="row">
-			<div class="col-md-12 col-lg-12 col-sm-12 card_render" style="display: none">
-				<img src="img/carte.jpg" id="card_background" alt="carte"/>
-				<div class="card_text"><?php if(!empty($card_variables->message)) echo $card_variables->message ?></div>
-				<canvas id="snow"></canvas>
+			<div class="col-md-12 col-lg-12 col-sm-12">
+				<div class="card_render" style="display: none">
+					<img src="img/carte.jpg" id="card_background" alt="carte"/>
+					<div class="over_text line1" style="display: none">Ensemble,</div>
+					<div class="over_text line2" style="display: none">cultivons notre futur</div>
+					<div class="card_text"><?php if(!empty($card_variables->message)) echo $card_variables->message ?></div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -92,7 +97,7 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="./js/jquery-ui.min.js" type="text/javascript"></script>
 <script src="js/card.js"></script>
 <?php if (!empty($card_variables)): ?>
 	<script type="text/javascript">
