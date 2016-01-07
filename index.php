@@ -21,7 +21,7 @@ if (!empty($_GET['card'])) {
 
 if (!empty($_POST['new_card'])) {
 	$data = array();
-	$data['message'] = $_POST['message'];
+	$data['message'] = nl2br($_POST['message']);
 	$link = 'http://'.$_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME'].'?card='.base64_encode(json_encode($data));
 
 	$to      = $_POST['recipient'] . ' <' .$_POST['email'] . '>';

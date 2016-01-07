@@ -1,5 +1,7 @@
 body {
   padding-top: 50px;
+  background-image: url('../img/background.jpg');
+  background-repeat: repeat;
 }
 div.content {
   padding: 40px 15px;
@@ -26,6 +28,7 @@ div.content {
   top: 8%;
 }
 .card_render .card_text {
+  margin-top: 30px;
   bottom: 15%;
   width: 100%;
   text-align: center;

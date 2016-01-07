@@ -53,25 +53,34 @@
 
 	<div class="content">
 		<?php if (empty($card_variables)): ?>
+			<?php if (!empty($link)): ?>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="alert alert-success" role="alert">
+							Votre message a bien été envoyé
+						</div>
+					</div>
+				</div>
+			<?php endif; ?>
 		<div class="row">
 			<div class="col-md-12 col-lg-12 col-sm-12 card_form">
 				<form action="index.php" role="form" method="post">
 					<input type="hidden" name="new_card" value="1"/>
 					<div class="form-group">
 						<label for="recipient">Destinataire</label>
-						<input type="text" class="form-control" id="recipient" name="recipient" placeholder="Entrer le nom du destinataire">
+						<input type="text" class="form-control" id="recipient" name="recipient" placeholder="Entrer le nom du destinataire" />
 					</div>
 					<div class="form-group">
 						<label for="recipient">Email</label>
-						<input type="email" class="form-control" id="email" name="email" placeholder="Entrer l'adresse email du destinataire">
+						<input type="email" class="form-control" id="email" name="email" placeholder="Entrer l'adresse email du destinataire" required="required" />
 					</div>
 					<div class="form-group">
 						<label for="sender">Mon Prénom et Nom</label>
-						<input type="text" class="form-control" id="sender" name="sender" placeholder="Entrer votre prénom et votre Nom">
+						<input type="text" class="form-control" id="sender" name="sender" placeholder="Entrer votre prénom et votre Nom" />
 					</div>
 					<div class="form-group">
 						<label for="sender_email">Mon Email</label>
-						<input type="email" class="form-control" id="sender_email" name="sender_email" placeholder="Entrer votre adresse email">
+						<input type="email" class="form-control" id="sender_email" name="sender_email" placeholder="Entrer votre adresse email" required="required" />
 					</div>
 					<div class="form-group">
 						<label for="message">Message</label>
@@ -81,9 +90,6 @@
 					<button type="submit" class="btn btn-default bit">Envoyer</button>
 				</form>
 				<br />
-				<?php if (!empty($link)): ?>
-					Votre message a bien été envoyé
-				<?php endif; ?>
 			</div>
 		</div>
 		<?php endif; ?>

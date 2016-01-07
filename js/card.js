@@ -108,6 +108,6 @@ function animate()
 
 $('.card_form').on('click', '.btn-test', function (e){
     e.preventDefault();
-    $('.card_text').text($('#message').val());
+    $('.card_text').html($('#message').val().replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1<br />$2'));
     animate();
 });
