@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -8,7 +8,7 @@
 	<meta name="author" content="">
 	<link rel="icon" href="/favicon.ico">
 
-	<title>## CARTE DE VOEUX TITRE ##</title>
+	<title>Meilleurs vœux 2016 - Ville de Rungis</title>
 
 	<link rel="stylesheet" href="./css/jquery-ui.structure.min.css"/>
 	<link rel="stylesheet" href="./css/jquery-ui.min.css"/>
@@ -66,8 +66,8 @@
 						<input type="email" class="form-control" id="email" name="email" placeholder="Entrer l'adresse email du destinataire">
 					</div>
 					<div class="form-group">
-						<label for="sender">Mon nom</label>
-						<input type="text" class="form-control" id="sender" name="sender" placeholder="Entrer votre nom">
+						<label for="sender">Mon Prénom et Nom</label>
+						<input type="text" class="form-control" id="sender" name="sender" placeholder="Entrer votre prénom et votre Nom">
 					</div>
 					<div class="form-group">
 						<label for="sender_email">Mon Email</label>
@@ -77,7 +77,7 @@
 						<label for="message">Message</label>
 						<textarea name="message" id="message" class="form-control"  cols="30" rows="5"></textarea>
 					</div>
-					<button class="btn btn-default bit btn-test">Tester</button>
+					<button class="btn btn-default bit btn-test">Visualiser</button>
 					<button type="submit" class="btn btn-default bit">Envoyer</button>
 				</form>
 				<br />
@@ -90,9 +90,9 @@
 		<div class="row">
 			<div class="col-md-12 col-lg-12 col-sm-12">
 				<div class="card_render" style="display: none">
-					<img src="img/carte.jpg" id="card_background" alt="carte"/>
-					<div class="over_text line1" style="display: none">Ensemble,</div>
-					<div class="over_text line2" style="display: none">cultivons notre futur</div>
+					<img src="img/carte.gif" id="card_background" alt="carte"/>
+					<div class="over_text line1" style="display: none"></div>
+					<div class="over_text line2" style="display: none"></div>
 					<div class="card_text"><?php if(!empty($card_variables->message)) echo $card_variables->message ?></div>
 				</div>
 			</div>

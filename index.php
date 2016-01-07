@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * User: julien
  * Date: 13/12/14
@@ -7,8 +7,8 @@
 
 // @TODO remplacer ces valeurs
 $sender = "test@test.fr";
-$subject = "##SENDER## vous a envoyé une carte";
-$message = 'Bonjour ##NAME##, <br /> ##SENDER## vous a envoyé une carte <a href="##LINK##">Cliquez ici</a> pour la voir.';
+$subject = "##SENDER## vous a envoyé une carte de vœux";
+$message = 'Bonjour ##NAME##, <br />  <br /> ##SENDER## vous a envoyé une carte de vœux. <a href="##LINK##">Cliquez ici</a> pour la voir. <br /> <br /> <br /> Avec les compliments de <a href="http://www.rungis.fr">la Ville de Rungis</a>';
 
 
 
